@@ -1,5 +1,5 @@
 """
-MINERVA ULTIMATE - Streamlit Version
+MINERVA - Streamlit Version
 Cognitive Impairment Screening Platform
 """
 
@@ -13,7 +13,7 @@ import hashlib
 
 # Page configuration
 st.set_page_config(
-    page_title="MINERVA ULTIMATE",
+    page_title="MINERVA",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -71,7 +71,7 @@ if 'analysis_results' not in st.session_state:
     st.session_state.analysis_results = None
 
 # Title and header
-st.title("🧠 MINERVA ULTIMATE")
+st.title("🧠 MINERVA")
 st.markdown("### Multimodal Intelligent Neurocognitive Evaluation via Rapid Voice Analysis")
 st.markdown("---")
 
@@ -105,7 +105,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### ℹ️ About")
     st.info("""
-    **MINERVA ULTIMATE** analyzes speech patterns 
+    **MINERVA** analyzes speech patterns 
     for cognitive impairment screening.
     
     Uses Pittsburgh Compound B PET Corpus data.
@@ -187,18 +187,14 @@ with col1:
             
             # Display probability
             st.markdown(f"""
-            <div class="metric-card">
-                <h2 style="text-align: center; margin-bottom: 1rem;">Probability of Cognitive Impairment</h2>
-                <h1 style="text-align: center; font-size: 4rem; color: {results['color']}; margin: 0;">
-                    {results['probability']}%
-                </h1>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <span style="font-size: 1.2rem; font-weight: bold; color: {results['color']};">
-                        {results['icon']} {results['risk_level']}
-                    </span>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+<div class="metric-card">
+    <h2 style="text-align: center; margin-bottom: 1rem; color: {results['color']};">Probability of Cognitive Impairment</h2>
+    <h1 style="text-align: center; font-size: 4rem; color: {results['color']}; margin: 0;">
+        {results['probability']}%
+    </h1>
+    ...
+</div>
+""", unsafe_allow_html=True)
             
             # Recommendation
             st.info(f"**Clinical Recommendation:** {results['recommendation']}")
